@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商品列表</title>
+</head>
+<body>
+    <h2>商品详情</h2>
+    <hr>
+<!--    foreach 数据库表中内容显示到页面中-->
+    <ul>
+        {volist name="$list" id="vo"}
+               <li>
+                 {$vo.user_id} - <a target="_blank" href="/user/{$vo.user_id}">{$vo.user_name}</a> - {$vo.email} - {$vo.mobile}
+               </li>
+        {/volist}
+        <a href=""></a>
+    </ul>
+</body>
+</html>

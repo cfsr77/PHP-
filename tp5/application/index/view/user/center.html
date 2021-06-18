@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人中心</title>
+</head>
+<body>
+    <h2>个人中心</h2>
+    <p>姓名:  {$user_name}</p>
+    <p>email:  {$email}</p>
+
+    <ul>
+        {foreach $ppp as $key =>$vo }
+        <li>
+            {$vo.dataid} - {$vo.datatime} - {$vo.dataip}
+        </li>
+        {/foreach}
+    </ul>
+    <a href="logauto">退出登录！</a>
+    <a href="film">电影评分！！！</a>
+    <a href="reward">抽奖！！！</a>
+    <a href="goo">我的预定</a>
+
+<!--    调用我的预定表-->
+    <table border="1">
+        <tr>
+            <td>座位号</td>
+            <td>预定时间</td>
+        </tr>
+<!--        进行foreach循环-->
+        {foreach $yud as $k=>$v}
+            <tr>
+<!--                把表里的number 和 time年月日放到表格中-->
+                <td>{$v.number}</td>
+                <td>{$v.time}</td>
+            </tr>
+        {/foreach}
+    </table>
+</body>
+</html>

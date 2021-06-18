@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+CFsr77:
+
+<table border="1">
+              <tr>
+                  <td>ID</td>
+                  <td>名称</td>
+                  <td>价格</td>
+                  <td>数量</td>
+                  <td>是否上架</td>
+                  <td>操作</td>
+              </tr>
+            {foreach $list as $key=>$vo}
+            <tr>
+                <td>{$vo.book_id}</td>
+                <td>{$vo.book_name}</td>
+                <td>{$vo.book_price}</td>
+                <td>{$vo.book_num}</td>
+                <td>
+                    {if $vo.is_sale == "1" }
+                        是
+                        {else}
+                        否
+                    {/if}
+                </td>
+                <td><a href="/bookdelete?book_id={$vo.book_id}">删除</a></td>
+            </tr>
+            {/foreach}
+        </table>
+</body>
+</html>
+<!--if({$vo.is_sale} == "1"){-->
+<!--echo "是";-->
+<!--}else {-->
+<!--echo "否";-->
+<!--}-->

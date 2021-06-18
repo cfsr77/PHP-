@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>预定座位</title>
+    <style>
+        div {
+            width: 1000px;
+            height: 400px;
+            border: 2px solid #008800;
+        }
+        div>span {
+            display: inline-block;
+            width:150px;
+            height:150px;
+            float: left;
+            margin:25px;
+            background-color: #008800;
+            color:blue;
+        }
+        .name {
+            background-color: #ff0000;
+        }
+    </style>
+</head>
+<body>
+    <h1>预定座位</h1>
+    <hr>
+    <div>
+        {foreach $list as $k=>$v}
+        {if($v.ztai == '已')}
+            <span class="name">已预定</span>
+        {else}
+            <span>{$k+1}未预定</span>
+        {/if}
+        {/foreach}
+    </div>
+    <hr>
+    <form action="goolist" method="post">
+请选择座位号: <input type="text" name="shuwei"> |
+            <input type="submit" value="预定">
+        
+    </form>
+    <form action="goodate" method="post">
+        取消预定: <input type="text" name="shuwei"> |
+                <input type="submit" value="取消预定">
+    </form>
+</body>
+</html>
